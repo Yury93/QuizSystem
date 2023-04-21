@@ -85,8 +85,15 @@ public class GuiSystem : MonoBehaviour
         if (CoroutineTimer != null) StopCoroutine(CoroutineTimer);
         timerText.text = secondTime.ToString() + " сек."; ;
 
-        currentScore += bonusScore;
-        bonusScore += 1;
+        if (bonusScore != 0)
+        {
+            currentScore += bonusScore;
+            bonusScore += 1;
+        }
+        else
+        {
+            currentScore += 1;
+        }
         Debug.Log("currentScore " + currentScore);
         PlayerPrefs.SetInt(SCORE, currentScore);
         scoreText.text = currentScore + "$";
