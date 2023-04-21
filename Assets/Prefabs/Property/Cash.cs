@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cash : MonoBehaviour
 {
@@ -18,19 +20,29 @@ public class Cash : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Property carText,wifeText,cityText, airText,companyText,houseText;
-    
+    [SerializeField] private Button closeButton;
+    private void Start()
+    {
+        closeButton.onClick.AddListener(Close);
+    }
+
+    private void Close()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         score = PlayerPrefs.GetInt(SCORE);
 
 
         scoreText.text = score + "$";
-        var car = Shop.instance.Properties.Where(c => c.type == TypeProperty.car).First(c => c.id == PlayerPrefs.GetInt(carId,0));
-        var wife = Shop.instance.Properties.Where(c => c.type == TypeProperty.wife).First(c => c.id == PlayerPrefs.GetInt(wifeId,0));
-        var city = Shop.instance.Properties.Where(c => c.type == TypeProperty.city).First(c => c.id == PlayerPrefs.GetInt(cityId,0));
-        var air = Shop.instance.Properties.Where(c => c.type == TypeProperty.air).First(c => c.id == PlayerPrefs.GetInt(airId,0));
-        var company = Shop.instance.Properties.Where(c => c.type == TypeProperty.company).First(c => c.id == PlayerPrefs.GetInt(companyId,0));
-        var house = Shop.instance.Properties.Where(c => c.type == TypeProperty.home).First(c => c.id == PlayerPrefs.GetInt(houseId,0));
+        var car = Shop.instance.Properties.Where(c => c.type == TypeProperty.car).First(c => c.id == PlayerPrefs.GetInt(carId));
+        var wife = Shop.instance.Properties.Where(c => c.type == TypeProperty.wife).First(c => c.id == PlayerPrefs.GetInt(wifeId));
+        var city = Shop.instance.Properties.Where(c => c.type == TypeProperty.city).First(c => c.id == PlayerPrefs.GetInt(cityId));
+        var air = Shop.instance.Properties.Where(c => c.type == TypeProperty.air).First(c => c.id == PlayerPrefs.GetInt(airId));
+        var company = Shop.instance.Properties.Where(c => c.type == TypeProperty.company).First(c => c.id == PlayerPrefs.GetInt(companyId));
+        var house = Shop.instance.Properties.Where(c => c.type == TypeProperty.home).First(c => c.id == PlayerPrefs.GetInt(houseId));
 
         carText.nameText.text = car.nameText.text;
         wifeText.nameText.text = wife.nameText.text;

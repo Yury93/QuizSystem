@@ -46,7 +46,7 @@ public class ShopWindow : MonoBehaviour
 
     private void Buy()
     {
-        if (this.selectedProperty = null)
+        if (this.selectedProperty != null)
         {
             PlayerPrefs.SetInt(savePlayerPrefs, selectedProperty.id);
             priceText.text = "Приобретено";
@@ -64,12 +64,12 @@ public class ShopWindow : MonoBehaviour
         if (score < property.price)
         {
             buyButton.interactable = false;
-            selectedProperty = null;
+            this.selectedProperty = null;
         }
         else
         {
             buyButton.interactable = true;
-            selectedProperty = property;
+           this. selectedProperty = property;
             //score -= property.price;
             //        PlayerPrefs.SetInt(SCORE,score);
             //scoreText.text = score + "$";

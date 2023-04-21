@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,9 @@ public class Shop : SingletonBase<Shop>
 {
     public List<Property> Properties;
     public ShopWindow wifeWindow,carWindow,airWindow,homeWindow,companyWindow,cityWindow;
-    public Button wifeButton, carButton, airButton, homeButton, companyButton, cityButton;
+    public Button wifeButton, carButton, airButton, homeButton, companyButton, cityButton,closeButton;
 
-    private void Start()
+    public void Init()
     {
         wifeWindow.Init();
         carWindow.Init();
@@ -31,6 +32,11 @@ public class Shop : SingletonBase<Shop>
         Properties.AddRange(homeWindow.properties);
         Properties.AddRange(companyWindow.properties);
         Properties.AddRange(cityWindow.properties);
+        closeButton.onClick.AddListener(Close);
     }
 
+    private void Close()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -13,5 +13,6 @@ public class GeneralMenu : MonoBehaviour
     {
         opennedShop.onClick.AddListener(() => shop.gameObject.SetActive(true));
         oppenedCash.onClick.AddListener(() => cashMyState.gameObject.SetActive(true));
+        shop.Init();
     }
 }
