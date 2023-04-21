@@ -7,12 +7,13 @@ public class GeneralMenu : MonoBehaviour
 {
     public Shop shop;
     public Cash cashMyState;
-    public Button opennedShop, oppenedCash;
+    public Button opennedShop, oppenedCash,startGame;
 
     private void Start()
     {
         opennedShop.onClick.AddListener(() => shop.gameObject.SetActive(true));
-        oppenedCash.onClick.AddListener(() => cashMyState.gameObject.SetActive(true));
-        shop.Init();
+        oppenedCash.onClick.AddListener(() => cashMyState.Open());
+        startGame.onClick.AddListener(() => SceneLoader.LoadGame());
+       shop.Init();
     }
 }

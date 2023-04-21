@@ -14,9 +14,11 @@ public class Property : MonoBehaviour
     public int price;
     public Button Button;
     public Action<Property> onClickAction;
+    //private string nameStr;
     private void Start()
     {
         Button.onClick.AddListener(onClick);
+        //nameStr = nameText.text;
     }
 
     private void onClick()
@@ -26,7 +28,7 @@ public class Property : MonoBehaviour
 
     private void OnEnable()
     {
-        nameText.text = nameText.text + " " + price + "$";
+        //nameText.text = nameStr + " " + price + "$";
         
     }
 }

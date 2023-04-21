@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader 
 {
-    public static void LoadNextScene()
+    public static void LoadGame()
     {
-       
+        SceneManager.LoadScene("Game");
     }
     public static void RestartScene()
     {

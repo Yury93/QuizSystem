@@ -3243,6 +3243,7 @@ MonoBehaviour:
   cashMyState: {fileID: 1359073507}
   opennedShop: {fileID: 1576272011}
   oppenedCash: {fileID: 1232714281}
+  startGame: {fileID: 1946273037}
 --- !u!114 &1469012115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2171017504374225742, guid: 1f4a7c30562f7b64199b033f79945a5f, type: 3}
@@ -4456,6 +4457,10 @@ PrefabInstance:
       propertyPath: id
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2612930837748828276, guid: ffe39f9505fe4084f9200c5f8dbb7eab, type: 3}
+      propertyPath: price
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5381465447671208713, guid: ffe39f9505fe4084f9200c5f8dbb7eab, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5034,7 +5039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f065ba30cb2d40b48a24359030c93664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsNotDestroy: 0
   Properties: []
   wifeWindow: {fileID: 8451129518028236028}
   carWindow: {fileID: 7882227812697717041}
@@ -11009,7 +11013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5404496296919483605
 GameObject:
   m_ObjectHideFlags: 0

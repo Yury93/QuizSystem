@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Shop : SingletonBase<Shop>
+public class Shop : MonoBehaviour
 {
     public List<Property> Properties;
     public ShopWindow wifeWindow,carWindow,airWindow,homeWindow,companyWindow,cityWindow;
     public Button wifeButton, carButton, airButton, homeButton, companyButton, cityButton,closeButton;
-
+    public static Shop instance;
+    
     public void Init()
     {
+        instance = this;
         wifeWindow.Init();
         carWindow.Init();
         airWindow.Init();
@@ -26,6 +28,7 @@ public class Shop : SingletonBase<Shop>
         companyButton.onClick.AddListener(() => companyWindow.Open());
         cityButton.onClick.AddListener(() => cityWindow.Open());
 
+        Properties = new List<Property>();
         Properties.AddRange(wifeWindow.properties);
         Properties.AddRange(carWindow.properties);
         Properties.AddRange(airWindow.properties);

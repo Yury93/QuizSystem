@@ -31,12 +31,14 @@ public class Cash : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnEnable()
+    public void Open()
     {
+        gameObject.SetActive(true);
         score = PlayerPrefs.GetInt(SCORE);
 
 
         scoreText.text = score + "$";
+        Debug.Log(Shop.instance);
         var car = Shop.instance.Properties.Where(c => c.type == TypeProperty.car).First(c => c.id == PlayerPrefs.GetInt(carId));
         var wife = Shop.instance.Properties.Where(c => c.type == TypeProperty.wife).First(c => c.id == PlayerPrefs.GetInt(wifeId));
         var city = Shop.instance.Properties.Where(c => c.type == TypeProperty.city).First(c => c.id == PlayerPrefs.GetInt(cityId));
