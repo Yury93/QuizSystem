@@ -68,7 +68,7 @@ public class GuiSystem : MonoBehaviour
         if (CoroutineTimer != null) StopCoroutine(CoroutineTimer);
         timerText.text = secondTime.ToString() + " сек."; ;
 
-        if (lives > 1)
+        if (lives > 1) 
         {
             lives -= 1;
             hpText.text = lives.ToString();
