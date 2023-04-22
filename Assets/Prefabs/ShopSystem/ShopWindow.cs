@@ -46,6 +46,14 @@ public class ShopWindow : MonoBehaviour
 
     private void Buy()
     {
+         var idProperty = PlayerPrefs.GetInt(savePlayerPrefs);
+        if(selectedProperty != null && selectedProperty.id == idProperty)
+        {
+            priceText.text = "Уже приобретено";
+            buyButton.interactable = false;
+            return;
+        }
+
         if (this.selectedProperty != null)
         {
             PlayerPrefs.SetInt(savePlayerPrefs, selectedProperty.id);
@@ -61,6 +69,13 @@ public class ShopWindow : MonoBehaviour
     private void OnClickProperty(Property property)
     {
         score = PlayerPrefs.GetInt(SCORE);
+        var idProperty = PlayerPrefs.GetInt(savePlayerPrefs);
+        if(property.id == idProperty)
+        {
+            priceText.text = "Уже приобретено";
+            buyButton.interactable = false;
+            return;
+        }
         if (score < property.price)
         {
             buyButton.interactable = false;
@@ -73,7 +88,8 @@ public class ShopWindow : MonoBehaviour
             //score -= property.price;
             //        PlayerPrefs.SetInt(SCORE,score);
             //scoreText.text = score + "$";
-            priceText.text = property.price + "$";
+         
         }
+        priceText.text = property.price + "$";
     }
 }
