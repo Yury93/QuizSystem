@@ -29,6 +29,8 @@ public class Cash : MonoBehaviour
     private void Close()
     {
         gameObject.SetActive(false);
+        SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
     }
 
     public void Open()

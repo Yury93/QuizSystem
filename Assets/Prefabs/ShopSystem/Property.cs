@@ -23,6 +23,8 @@ public class Property : MonoBehaviour
 
     private void onClick()
     {
+        SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
         onClickAction?.Invoke(this);
     }
 

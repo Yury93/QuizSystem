@@ -198,15 +198,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.59392637, g: 0.7735849, b: 0.28754002, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: b60d54988a19f42429620bd8abcb3b11, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -229,8 +229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   id: 0
-  name: "\u0412\u043E\u0437\u0434\u0443\u0448\u043D\u044B\u0439 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442:
-    \u043D\u0435\u0442 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u0430"
   nameText: {fileID: 6306337002044285268}
   price: 0
   Button: {fileID: 3219482063747164099}

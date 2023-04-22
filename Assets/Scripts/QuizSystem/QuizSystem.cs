@@ -78,7 +78,13 @@ public class QuizSystem : MonoBehaviour
             questions.RemoveAt(rnd);
 
         }
-        else { SceneLoader.LoadMenu(); return; }
+        else 
+        {
+
+            CoreEnivroment.instance.GameOverWindow.Open();
+                return;
+        
+        }
     }
 
     public void ClickAnswer()
@@ -97,6 +103,7 @@ public class QuizSystem : MonoBehaviour
 
             ShowRightAnswer();
         }
+        SoundSystem.instance.CreateSound(SoundSystem.instance.soundLibrary.clickButton);
     }
 
     private void ShowRightAnswer()

@@ -42,6 +42,8 @@ public class ShopWindow : MonoBehaviour
     public void Close()
     {
         gameObject.SetActive(false);
+        SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
     }
 
     private void Buy()
@@ -50,12 +52,15 @@ public class ShopWindow : MonoBehaviour
         if(selectedProperty != null && selectedProperty.id == idProperty)
         {
             priceText.text = "Уже приобретено";
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
             buyButton.interactable = false;
             return;
         }
 
         if (this.selectedProperty != null)
         {
+            SoundSystem.instance.CreateSound(SoundSystem.instance.soundLibrary.upgradePlayer, 0.1f, 0.25f);
             PlayerPrefs.SetInt(savePlayerPrefs, selectedProperty.id);
             priceText.text = "Приобретено";
             score -= selectedProperty.price;

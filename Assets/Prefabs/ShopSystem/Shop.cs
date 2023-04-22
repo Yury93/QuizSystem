@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public List<Property> Properties;
-    public ShopWindow wifeWindow,carWindow,airWindow,homeWindow,companyWindow,cityWindow;
-    public Button wifeButton, carButton, airButton, homeButton, companyButton, cityButton,closeButton;
+    public ShopWindow wifeWindow, carWindow, airWindow, homeWindow, companyWindow, cityWindow;
+    public Button wifeButton, carButton, airButton, homeButton, companyButton, cityButton, closeButton;
     public static Shop instance;
-    
+
     public void Init()
     {
         instance = this;
@@ -21,12 +21,48 @@ public class Shop : MonoBehaviour
         companyWindow.Init();
         cityWindow.Init();
 
-        wifeButton.onClick.AddListener(() => wifeWindow.Open());
-        carButton.onClick.AddListener(() => carWindow.Open());
-        airButton.onClick.AddListener(() => airWindow.Open());
-        homeButton.onClick.AddListener(() => homeWindow.Open());
-        companyButton.onClick.AddListener(() => companyWindow.Open());
-        cityButton.onClick.AddListener(() => cityWindow.Open());
+        wifeButton.onClick.AddListener(() =>
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            wifeWindow.Open();
+
+        });
+        carButton.onClick.AddListener(() => 
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            carWindow.Open();
+
+        });
+        airButton.onClick.AddListener(() =>
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            airWindow.Open();
+
+        });
+        homeButton.onClick.AddListener(() =>
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            homeWindow.Open();
+
+        });
+        companyButton.onClick.AddListener(() =>
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            companyWindow.Open();
+
+        });
+        cityButton.onClick.AddListener(() => 
+        {
+            SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
+            cityWindow.Open();
+
+        });
 
         Properties = new List<Property>();
         Properties.AddRange(wifeWindow.properties);
@@ -36,10 +72,12 @@ public class Shop : MonoBehaviour
         Properties.AddRange(companyWindow.properties);
         Properties.AddRange(cityWindow.properties);
         closeButton.onClick.AddListener(Close);
-    }
+    } 
 
     private void Close()
     {
+        SoundSystem.instance.CreateSound(
+            SoundSystem.instance.soundLibrary.clickButton);
         gameObject.SetActive(false);
     }
 }

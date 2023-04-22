@@ -76,7 +76,8 @@ public class GuiSystem : MonoBehaviour
         }
         else
         {
-            SceneLoader.LoadMenu();
+            CoreEnivroment.instance.GameOverWindow.Open();
+         
         }
     }
 
